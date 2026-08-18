@@ -1,0 +1,50 @@
+name: Deploy linux_cha_xun to GitHub Pages
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - master
+      - deploy
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Ensure unzip installed
+        run: sudo apt-get update && sudo apt-get install -y unzip
+
+      - name: Unzip site
+        run: |
+          if [ -f linux_cha_xun.zip ]; then
+            mkdir -p site
+            unzip -o linux_cha_xun.zip -d site
+            # If the zip contains a single root folder, move its contents up
+            ROOT_DIR=$(find site -maxdepth 1 -mindepth 1 -type d | head -n 1 || true)
+            if [ -d "$ROOT_DIR" ]; then
+              mv "$ROOT_DIR"/* site/ || true
+            fi
+          else
+            echo "linux_cha_xun.zip not found"
+            exit 1
+          fi
+
+      - name: List files
+        run: ls -la site | sed -n '1,200p'
+
+      - name: Upload artifact for GitHub Pages
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: site
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v1

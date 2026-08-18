@@ -1,0 +1,74 @@
+<!DOCTYPE html><html lang="zh-CN" data-astro-cid-snvkso3m> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>find 命令 - find命令</title><meta name="description" content="find命令的功能是根据给定的路径和条件查找相关文件或目录，其参数灵活方便，且支持正则表达式，结合管道符后能够实现更加复杂的功能，是Linux系统运维人员必须掌握的命令之一。
+find命令通常进行的是从根目录（/）开始的全盘搜索，有别于wh"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ctext y='12' font-size='11' font-family='monospace' fill='%232563eb'%3E%24_%3C/text%3E%3C/svg%3E"><style>:root{--bg: #fafafa;--panel: #ffffff;--border: #e5e7eb;--border-soft: #f3f4f6;--text: #111827;--muted: #6b7280;--accent: #2563eb;--accent-bg: #eff6ff;--accent-border: #bfdbfe;--code-bg: #f8fafc}[data-astro-cid-snvkso3m]{box-sizing:border-box;margin:0;padding:0}body{background:var(--bg);color:var(--text);font-family:-apple-system,Segoe UI,PingFang SC,Microsoft YaHei,sans-serif;line-height:1.6;padding-bottom:60px}.topbar[data-astro-cid-snvkso3m]{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;border-bottom:1px solid var(--border);position:sticky;top:0;background:#ffffffeb;backdrop-filter:blur(6px);z-index:10}.topbar[data-astro-cid-snvkso3m] a[data-astro-cid-snvkso3m]{color:var(--accent);text-decoration:none;font-size:14px}.topbar[data-astro-cid-snvkso3m] .home[data-astro-cid-snvkso3m]{font-weight:600;color:var(--text)}.topbar[data-astro-cid-snvkso3m] .home[data-astro-cid-snvkso3m]:hover{color:var(--accent)}.cats[data-astro-cid-snvkso3m]{display:flex;gap:8px;flex-wrap:wrap}.container[data-astro-cid-snvkso3m]{max-width:820px;margin:0 auto;padding:36px 24px 40px}.title-block[data-astro-cid-snvkso3m]{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:8px}h1[data-astro-cid-snvkso3m]{font-family:SF Mono,Consolas,monospace;font-size:34px;letter-spacing:.5px}.chinese[data-astro-cid-snvkso3m]{font-size:17px;color:var(--muted)}.cats[data-astro-cid-snvkso3m]{margin-bottom:28px}.tag[data-astro-cid-snvkso3m]{display:inline-block;font-size:12px;padding:3px 10px;border-radius:999px;background:var(--accent-bg);color:var(--accent);border:1px solid var(--accent-border);margin-right:8px}section[data-astro-cid-snvkso3m]{margin-bottom:30px}section[data-astro-cid-snvkso3m] h2[data-astro-cid-snvkso3m]{font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px}.desc[data-astro-cid-snvkso3m] p[data-astro-cid-snvkso3m]{white-space:pre-wrap;color:var(--text);font-size:14px;line-height:1.8}.syntax-box[data-astro-cid-snvkso3m]{background:var(--code-bg);border:1px solid var(--border);border-radius:6px;padding:12px 16px;font-family:SF Mono,Consolas,monospace;font-size:14px;color:var(--text);overflow-x:auto}.params-list[data-astro-cid-snvkso3m]{list-style:none}.params-list[data-astro-cid-snvkso3m] li[data-astro-cid-snvkso3m]{display:flex;gap:14px;padding:7px 0;border-bottom:1px solid var(--border-soft);font-size:14px;line-height:1.7}.params-list[data-astro-cid-snvkso3m] li[data-astro-cid-snvkso3m]:last-child{border-bottom:none}.param-flag[data-astro-cid-snvkso3m]{font-family:SF Mono,Consolas,monospace;color:var(--accent);min-width:140px;flex-shrink:0;font-weight:600}.example-block[data-astro-cid-snvkso3m]{background:var(--code-bg);border:1px solid var(--border);border-radius:6px;padding:12px 16px;margin-bottom:12px;overflow-x:auto}.example-title[data-astro-cid-snvkso3m]{font-size:13px;color:var(--accent);font-weight:600;margin-bottom:8px}.example-body[data-astro-cid-snvkso3m]{font-family:SF Mono,Consolas,monospace;font-size:13px;line-height:1.7;color:var(--text);white-space:pre-wrap;word-break:break-word}.empty[data-astro-cid-snvkso3m]{color:var(--muted);font-size:13px}footer[data-astro-cid-snvkso3m]{margin-top:40px;text-align:center;color:var(--muted);font-size:12px}@media(max-width:768px){.topbar[data-astro-cid-snvkso3m]{padding:12px 16px}.topbar[data-astro-cid-snvkso3m] a[data-astro-cid-snvkso3m]{font-size:13px}.container[data-astro-cid-snvkso3m]{padding:22px 16px 32px}.title-block[data-astro-cid-snvkso3m]{gap:8px}h1[data-astro-cid-snvkso3m]{font-size:26px}.chinese[data-astro-cid-snvkso3m]{font-size:14px}.tag[data-astro-cid-snvkso3m]{font-size:11px;padding:2px 8px}.syntax-box[data-astro-cid-snvkso3m]{font-size:13px;padding:10px 12px}.params-list[data-astro-cid-snvkso3m] li[data-astro-cid-snvkso3m]{gap:10px;font-size:13px}.param-flag[data-astro-cid-snvkso3m]{min-width:92px}.example-block[data-astro-cid-snvkso3m]{padding:10px 12px}.example-body[data-astro-cid-snvkso3m]{font-size:12px}section[data-astro-cid-snvkso3m] h2[data-astro-cid-snvkso3m]{font-size:11px}}
+</style></head> <body data-astro-cid-snvkso3m> <div class="topbar" data-astro-cid-snvkso3m> <a class="home" href="/" data-astro-cid-snvkso3m>← Linux 命令速查</a> <span class="cats" data-astro-cid-snvkso3m> <span class="tag" data-astro-cid-snvkso3m>文件管理(file)</span> <span class="tag" data-astro-cid-snvkso3m>file</span> </span> </div> <div class="container" data-astro-cid-snvkso3m> <div class="title-block" data-astro-cid-snvkso3m> <h1 data-astro-cid-snvkso3m>find</h1> <span class="chinese" data-astro-cid-snvkso3m>find命令</span> </div> <section data-astro-cid-snvkso3m> <h2 data-astro-cid-snvkso3m>功能描述</h2> <div class="desc" data-astro-cid-snvkso3m> <p data-astro-cid-snvkso3m>find命令的功能是根据给定的路径和条件查找相关文件或目录，其参数灵活方便，且支持正则表达式，结合管道符后能够实现更加复杂的功能，是Linux系统运维人员必须掌握的命令之一。</p><p data-astro-cid-snvkso3m>find命令通常进行的是从根目录（/）开始的全盘搜索，有别于whereis、which、locate等有条件或部分文件的搜索。对于服务器负载较高的情况，建议不要在高峰时期使用find命令的模糊搜索，这会相对消耗较多的系统资源。</p> </div> </section> <section data-astro-cid-snvkso3m> <h2 data-astro-cid-snvkso3m>语法</h2> <div class="syntax-box" data-astro-cid-snvkso3m>find [路径] [条件] [文件名]</div> </section> <section data-astro-cid-snvkso3m> <h2 data-astro-cid-snvkso3m>参数说明</h2> <ul class="params-list" data-astro-cid-snvkso3m> <li data-astro-cid-snvkso3m> <span class="param-flag" data-astro-cid-snvkso3m>-name</span> <span data-astro-cid-snvkso3m>匹配文件名</span> </li><li data-astro-cid-snvkso3m> <span class="param-flag" data-astro-cid-snvkso3m>-perm</span> <span data-astro-cid-snvkso3m>匹配文件权限</span> </li><li data-astro-cid-snvkso3m> <span class="param-flag" data-astro-cid-snvkso3m>-user</span> <span data-astro-cid-snvkso3m>匹配文件所属主</span> </li><li data-astro-cid-snvkso3m> <span class="param-flag" data-astro-cid-snvkso3m>-group</span> <span data-astro-cid-snvkso3m>匹配文件所属组</span> </li><li data-astro-cid-snvkso3m> <span class="param-flag" data-astro-cid-snvkso3m>-mtime</span> <span data-astro-cid-snvkso3m>匹配最后修改文件内容时间</span> </li><li data-astro-cid-snvkso3m> <span class="param-flag" data-astro-cid-snvkso3m>-atime</span> <span data-astro-cid-snvkso3m>匹配最后读取文件内容时间</span> </li><li data-astro-cid-snvkso3m> <span class="param-flag" data-astro-cid-snvkso3m>-ctime</span> <span data-astro-cid-snvkso3m>匹配最后修改文件属性时间</span> </li><li data-astro-cid-snvkso3m> <span class="param-flag" data-astro-cid-snvkso3m>-nogroup</span> <span data-astro-cid-snvkso3m>匹配无所属组的文件</span> </li><li data-astro-cid-snvkso3m> <span class="param-flag" data-astro-cid-snvkso3m>-newer</span> <span data-astro-cid-snvkso3m>匹配比指定文件更新的文件</span> </li><li data-astro-cid-snvkso3m> <span class="param-flag" data-astro-cid-snvkso3m>-type</span> <span data-astro-cid-snvkso3m>匹配文件类型</span> </li><li data-astro-cid-snvkso3m> <span class="param-flag" data-astro-cid-snvkso3m>-size</span> <span data-astro-cid-snvkso3m>匹配文件大小</span> </li><li data-astro-cid-snvkso3m> <span class="param-flag" data-astro-cid-snvkso3m>-prune</span> <span data-astro-cid-snvkso3m>不搜索指定目录</span> </li><li data-astro-cid-snvkso3m> <span class="param-flag" data-astro-cid-snvkso3m>-exec…… {}\;</span> <span data-astro-cid-snvkso3m>进一步处理搜索结果</span> </li> </ul> </section> <section data-astro-cid-snvkso3m> <h2 data-astro-cid-snvkso3m>参考示例</h2> <div class="example-block" data-astro-cid-snvkso3m> <div class="example-title" data-astro-cid-snvkso3m>示例1:</div> <div class="example-body" data-astro-cid-snvkso3m>全盘搜索系统中所有以.conf结尾的文件：
+[root@linuxcool ~]# find / -name *.conf 
+/run/tmpfiles.d/kmod.conf 
+/etc/resolv.conf 
+/etc/dnf/dnf.conf 
+/etc/dnf/plugins/copr.conf 
+/etc/dnf/plugins/debuginfo-install.conf 
+/etc/dnf/plugins/product-id.conf 
+/etc/dnf/plugins/subscription-manager.conf 
+………………省略部分输出信息………………</div> </div><div class="example-block" data-astro-cid-snvkso3m> <div class="example-title" data-astro-cid-snvkso3m>示例2:</div> <div class="example-body" data-astro-cid-snvkso3m>在/etc目录中搜索所有大于1MB的文件：
+[root@linuxcool ~]# find /etc -size +1M 
+/etc/selinux/targeted/policy/policy.31 
+/etc/udev/hwdb.bin</div> </div><div class="example-block" data-astro-cid-snvkso3m> <div class="example-title" data-astro-cid-snvkso3m>示例3:</div> <div class="example-body" data-astro-cid-snvkso3m>在/home目录中搜索所有属于指定用户的文件：
+[root@linuxcool ~]# find /home -user linuxprobe 
+/home/linuxprobe 
+/home/linuxprobe/.mozilla 
+/home/linuxprobe/.mozilla/extensions 
+/home/linuxprobe/.mozilla/plugins 
+/home/linuxprobe/.bash_logout 
+/home/linuxprobe/.bash_profile 
+/home/linuxprobe/.bashrc</div> </div><div class="example-block" data-astro-cid-snvkso3m> <div class="example-title" data-astro-cid-snvkso3m>示例4:</div> <div class="example-body" data-astro-cid-snvkso3m>列出当前工作目录中的所有文件、目录以及子文件信息：
+[root@linuxcool ~]# find .
+. 
+./.bash_logout 
+./.bash_profile 
+./.bashrc 
+./.cshrc 
+./.tcshrc 
+./anaconda-ks.cfg 
+………………省略部分输出信息………………</div> </div><div class="example-block" data-astro-cid-snvkso3m> <div class="example-title" data-astro-cid-snvkso3m>示例5:</div> <div class="example-body" data-astro-cid-snvkso3m>在/var/log目录下搜索所有指定后缀的文件：
+[root@linuxcool ~]# find /var/log -name &quot;*.log&quot; 
+/var/log/audit/audit.log 
+/var/log/rhsm/rhsmcertd.log 
+/var/log/rhsm/rhsm.log 
+/var/log/sssd/sssd.log 
+/var/log/sssd/sssd_implicit_files.log 
+/var/log/sssd/sssd_nss.log 
+/var/log/sssd/sssd_kcm.log 
+/var/log/tuned/tuned.log 
+/var/log/anaconda/anaconda.log 
+/var/log/anaconda/X.log 
+………………省略部分输出信息………………</div> </div><div class="example-block" data-astro-cid-snvkso3m> <div class="example-title" data-astro-cid-snvkso3m>示例6:</div> <div class="example-body" data-astro-cid-snvkso3m>在/var/log目录下搜索所有不是以.log结尾的文件：
+[root@linuxcool ~]# find /var/log ! -name &quot;*.log&quot; 
+/var/log 
+/var/log/lastlog 
+/var/log/README 
+/var/log/private 
+/var/log/wtmp 
+/var/log/btmp 
+/var/log/samba</div> </div><div class="example-block" data-astro-cid-snvkso3m> <div class="example-title" data-astro-cid-snvkso3m>示例7:</div> <div class="example-body" data-astro-cid-snvkso3m>搜索当前工作目录中所有近7天被修改过的文件：
+[root@linuxcool ~]# find . -mtime +7 
+./.bash_logout 
+./.bash_profile 
+./.bashrc
+./.cshrc 
+./.tcshrc 
+………………省略部分输出信息………………</div> </div><div class="example-block" data-astro-cid-snvkso3m> <div class="example-title" data-astro-cid-snvkso3m>示例8:</div> <div class="example-body" data-astro-cid-snvkso3m>全盘搜索系统中所有类型为目录，且权限为1777的目录文件：
+[root@linuxcool ~]#find / -type d -perm 1777/dev/mqueue
+/dev/shm
+/var/tmp
+/tmp
+………………省略部分输出信息………………</div> </div><div class="example-block" data-astro-cid-snvkso3m> <div class="example-title" data-astro-cid-snvkso3m>示例9:</div> <div class="example-body" data-astro-cid-snvkso3m>全盘搜索系统中所有类型为普通文件，且可以执行的文件信息：
+[root@linuxcool ~]#find / -type f -perm /a=x/boot/vmlinuz-4.18.0-80.el8.x86_64
+/boot/vmlinuz-0-rescue-c8b04558503242459d908c6c22a2d481
+/etc/X11/xinit/xinitrc.d/50-systemd-user.sh
+/etc/X11/xinit/xinitrc.d/00-start-message-bus.sh
+/etc/X11/xinit/xinitrc.d/localuser.sh
+/etc/X11/xinit/Xclients
+/etc/X11/xinit/Xsession
+/etc/X11/xinit/xinitrc
+………………省略部分输出信息………………</div> </div><div class="example-block" data-astro-cid-snvkso3m> <div class="example-title" data-astro-cid-snvkso3m>示例10:</div> <div class="example-body" data-astro-cid-snvkso3m>全盘搜索系统中所有后缀为.mp4的文件，并删除所有查找到的文件：
+[root@linuxcool ~]#find / -name &quot;*.mp4&quot; -exec rm -rf {} \;</div> </div> </section> <footer data-astro-cid-snvkso3m>find · Linux 命令速查 · 静态站点预渲染</footer> </div> </body></html>
